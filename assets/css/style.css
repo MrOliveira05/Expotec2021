@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root{
+  --background: #E4E9F7;
+  --firstcolor: #ffffff;
+  --secondcolor: #000;
+  --backside:#800000;
+  --icons:rgb(0, 0, 0);
+  --hoverside:#B22222;  
+  --def: #E4E9F7; 	
+	--inv: #800000;
+}
+  /*===== Fuente y tipografia =====*/
+  :root{
+    --body-font: 'Poppins', sans-serif;
+    --big-font-size: 2rem;
+    --h2-font-size: 1.25rem;
+    --normal-font-size: 0.938rem;
+    --offset: 6px;
+  }
+  @media screen and (min-width: 768px){
+    :root{
+      --big-font-size: 3.5rem;
+      --h2-font-size: 2rem;
+      --normal-font-size: 1rem;
+    }
+  }
+
+  /*===== Margenes =====*/
+  :root{
+    --mb-1: 0.5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+  }
+
+  /*===== z index =====*/
+  :root{
+    --z-back: -10;
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+
+  html,body{
+    margin: 0;
+    padding: 0;
+  }
+  canvas{
+    display: block;
+    height:100%;
+    width:100%;
+    font-family: var(--body-font);
+  }
+  a{
+    text-decoration: none;
+  }
+/* ~~~~~~~ INIT. BTN ~~~~~~~ */
+
+.btn {		
+  font-family: var(--body-font);
+  z-index: 10;
+	position: absolute;	
+  left: 40%;
+  top: 40%;
+	padding: 1.4rem 4.2rem;
+	padding-right: 3.1rem;
+	font-size: 1.4rem;
+	color: var(--inv);
+	letter-spacing: 1rem;
+	text-transform: uppercase;
+	transition: all 400ms cubic-bezier(0.77, 0, 0.175, 1);	
+	user-select: none;
+}
+
+.btn:before, .btn:after {
+	content: '';
+	position: absolute;	
+	transition: inherit;
+	z-index: -1;
+}
+
+.btn:hover {
+	color: var(--def);
+	transition-delay: .5s;
+}
+
+.btn:hover:before {
+	transition-delay: 0s;
+}
+
+.btn:hover:after {
+	background: var(--inv);
+	transition-delay: .35s;
+}
+
+/* From center */
+
+.from-center:before {
+	top: 0;
+	left: 50%;
+	height: 100%;
+	width: 0;
+	border: 1px solid var(--inv);
+	border-left: 0;
+	border-right: 0;
+}
+
+.from-center:after {
+	bottom: 0;
+	left: 0;
+	height: 0;
+	width: 100%;
+	background: var(--inv);
+}
+
+.from-center:hover:before {
+	left: 0;
+	width: 100%;
+}
+
+.from-center:hover:after {
+	top: 0;
+	height: 100%;
+}
